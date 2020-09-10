@@ -1,6 +1,6 @@
-# NodeJS is saying 2-2322873 2526 56837 2 AND LL-PROG
+## NodeJS is saying 2-2322873 2526 56837 2 AND LL-PROG
 
-# NodeJS Debugging Example
+## NodeJS Debugging Example
 ```node
 const debug = require('debug')('nameOfDebugVar');
 console.log("Var Val through the debugger");
@@ -9,7 +9,7 @@ let secondArr = myArray.map(elem => item*5);
 debug("POST LOOP");
 ```
 
-# HOW TO RUN
+## HOW TO RUN
 ```bash
 DEBUG=nameOfDebugVar node nameOfFile.js
 ```
