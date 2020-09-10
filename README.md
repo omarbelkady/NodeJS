@@ -1,7 +1,7 @@
 # NodeJS is saying 2-2322873 2526 56837 2 AND LL-PROG
 
 # NodeJS Debugging Example
-```nodejs
+```node
 const debug = require('debug')('nameOfDebugVar');
 console.log("Var Val through the debugger");
 let myArray= [].fill(120,0,10000);
