@@ -1,7 +1,8 @@
 var http = require("http");
 var fs = require("fs");
 
-var theReadStream = fs.createReadStream(__dirname + '/readingFile.txt', 'utf8');
+
+var theReadStream = fs.createReadStream(__dirname+ '/readingFile.txt');
 var theWriteStream = fs.createWriteStream(__dirname+ '/writingFile.txt');
 
 /*
@@ -22,4 +23,24 @@ theReadStream.on('data', function(someData){
 //This prevents us from waiting for the data events and manually write to a write Stream. 
 //
 //I change the above code to this remember we can only pipe from a readable stream to a writeable stream
-theReadStream.pipe(theWriteStream);
+//theReadStream.pipe(theWriteStream);
+
+
+//Now I will use the server
+var a_server = http.createServer(function(request,response){
+	console.log("The Request was made: "+request.url)
+
+	var theReadStream = fs.createReadStream(__dirname+ '/readingFile.txt');
+	//var theWriteStream = fs.createWriteStream(__dirname+ '/writingFile.txt');
+	
+	//Currently we are reading from the Read Stream and Sending it to the Write Stream
+	//We do not want that we want to send it to the client We want to send it to the response object
+
+	//Instead of piping theWriteStream I will pipe response
+	theReadStream.pipe(response);
+	response.writeHead(200, {"Content-Type": "text/plain"});
+//	response.end("End Of Response Now 53526: Go Learn C, 264352: Stop Reading");
+});
+
+a_server.listen(3000, "100.115.92.2");
+console.log("Hello Hello, Assembly and Pintos are now listening on Port 3000, Stop Reading, Learn C and C# and stay away from Java");
