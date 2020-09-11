@@ -1,0 +1,24 @@
+{
+  "name": "dotenvinnjsforenvvars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server-env-vars.js",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "nodemonConfig":{
+	"__mycomment__": "do not watch for changes in my distribution folder nor my docs folder nor any file that has a css extension",
+	"delay":"2000",
+	"ignore":["docs/*","dist/*","*/*.css"]
+  },
+  "scripts": {
+	"watch":"nodemon ./basic-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "keywords": [],
+  "license": "ISC"
+}
