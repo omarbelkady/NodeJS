@@ -6,7 +6,7 @@ const server = http.createServer(function(req, res) {
   let parsedURL = url.parse(req.url, true);
   let path = parsedURL.pathname;
   // parsedURL.pathname  parsedURL.query
-  // standardize the requested url by removing any '/' at the start or end
+  // requested url we have removed any '/' at the start or end and replace them with an empty string
   // '/folder/to/file/' becomes 'folder/to/file'
   path = path.replace(/^\/+|\/+$/g, "");
   console.log(path);
@@ -76,8 +76,9 @@ let routes = {
     //this function called if path is 'kenny/is/mysterion'
     let payload = {
       name: "Nelan",
-      enemy: "The Assembly56837",
-      today: +new Date()
+      nickName: "The Assembly56837",
+      today: +new Date(),
+      luckyNumber: "2526568372"
     };
     let payloadStr = JSON.stringify(payload);
     res.setHeader("Content-Type", "application/json");
