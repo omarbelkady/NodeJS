@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "a model server for encryption and hashing passwords",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified go learn 2/Pintos\" && exit 1",
+    "dev": "API_PORT=4000 node app.js"
+  },
+  "keywords": [],
+  "author": "Omar <omarbelkady@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
+  }
+}

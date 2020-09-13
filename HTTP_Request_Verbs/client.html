@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>HOW To Make Requests to A Server</title>
+    </head>
+<body>
+<pre id="output"></pre>
+	<script>
+		let url = "http://100.115.92.2:3000/api/channel";
+
+		// url = url + "/1"; 
+
+		let h = new Headers();
+		h.append("Content-Type", "application/json");
+		let data = JSON.stringify({ name: "Omar Belkady" });
+		let req = new Request(url, {
+			method: "POST",
+			headers: h,
+            		body: data
+          	});
+          
+          	fetch(req)
+              		.then(res => res.json())
+              		.then(data => {
+              			console.log(data);
+              			document.getElementById("output").textContent = JSON.stringify(
+                  data,
+                  null,
+                    2
+		);
+        });
+   </script>
+</body>
+</html>
