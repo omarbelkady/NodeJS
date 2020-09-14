@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       	<title>JSON Web toens </title>
+</head>
+<body>
+        <header>
+              <h1>Rememember 2526 56837 C BUT ESPECIALLY 277777777777777777777777E6666666BLY</h1>
+        </header>
+        <main>
+               <p><button id="btnLive">Click to Test Server</button></p>
+               <p><button id="btnToken">Click to Get Token</button></p>
+               <p><button id="btnTest">Click to Check Token</button></p>
+               <pre id="output"></pre>
+
+        </main>
+        <script>
+			let output;
+			document.addEventListener('DOMContentLoaded', () =>{	
+				output = document.getElementById("output");
+				document.getElementById('btnLive').addEventListener("click", goLive);
+				document.getElementById('btnToken').addEventListener("click", gettoken);
+				document.getElementById('btnTest').addEventListener("click", test);
+			});
+			const baseurl = 'http://100.115.92:2:3030/';
+
+			function goLive(ev){
+				//Making sure my server is live 968 6342 56837
+				fetch(baseurl)
+					.then((res) => res.json())
+					.then((content) => {
+						//place the content in the output tag
+						output.innerHTML = JSON.stringify(content,'\n',2);
+					})
+					.catch((err) => console.error);
+			}
+
+			function gettoken(ev){
+				//making a request to get a token
+			        //Making sure my server is live 968 6342 56837
+				fetch(baseurl + "token")
+					.then((res) => res.json())
+					.then((content) => {
+						//place the content in the output tag
+						output.innerHTML = JSON.stringify(content,'\n',2);
+						let token = content.data;
+						localStorage.setItem('token',token);
+					})
+					.catch(err => console.error);
+			}
+
+			function test(ev){
+				//send the token for a secret purpose
+				let token = localStorage.getItem("token");
+				if(!token){
+					output.innerHTML = 'No Token Available';
+					return;
+				}
+				let h = new Headers();
+				h.append('Authorization', `Bearer${token}`);
+				let url = mybaseurl + "test"; 	
+				let req = new Request(url, {
+					headers: h,
+					method: "GET",
+				});
+				
+				fetch(req)
+					.then((res) => res.json())
+					.then((content) => {
+						//place the content in the output tag
+						output.innerHTML = JSON.stringify(content,'\n',2);
+						if(content.code > 0)
+						{
+							//error happened therefore remove the token
+							localStorage.removeItem('token');
+						}
+					})
+					.catch((err) => console.error);
+			}
+        </script>
+</body>
+</html>
