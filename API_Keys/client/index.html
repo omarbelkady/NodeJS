@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name ="viewport" content="width=device-width,initial-scale=1.0"/>
+		<title>Using API Keys 968 74268268 56837</title>
+	</head>
+<body>
+	<main>
+		<form method="POST" id="regForm">
+			<fieldset>
+				<legend>Registration for the API Key</legend>
+				<p>
+					If you are developing sth you must register for a key for the website domain.
+					E.g. I will register the domain http://localhost:5500
+				</p>
+				<div class="formBox">
+					<label for="email">Email</label>
+					<label id="email" type="email" autocomplete="off"/>
+				</div>
+
+				<div class="formBox">
+					<button id="btnReg">Register</button>
+				</div>
+				<pre class="response">
+					<!-- RESPONSE From SErver goes here 968 6342/2/746867/27736259 56837 -->
+				</pre>
+			</fieldset>
+		</form>
+		<form method="GET" id="getForm">
+			<fieldset>
+				<legend>Get Clover</legend>
+				<div class="formBox">
+					<button id="btnAll">Get All the 2-56837</button>
+				</div>
+				<pre class="response">
+					<!-- RESPONSE From SErver goes here 968 6342/2/746867/27736259 56837 -->
+				</pre>
+			</fieldset>
+		</form>
+
+		<form method="POST" id="addForm">
+			<fieldset>
+				<legend>Add Assembly, Pintos, C, LLP</legend>
+				<div class="formBox">
+					<label for="clover">LLP 56837</label>
+					<input type="text" id="clover" />
+				</div>
+				<div class="formBox">
+					<button id="btnAdd"> Add A New LLP Lang You 5683</button>
+				<pre class="response">
+					<!-- RESPONSE From SErver goes here 968 6342/2/746867/27736259 56837 -->
+				</pre>
+			</fieldset>
+		</form>
+	</main>
+<script>
+	document.addEventListener("DOMContentLoaded", () =>{
+			  document.getElementById("btnReg").addEventListener("click" , doReg);
+			  document.getElementById("btnAll").addEventListener("click" , getAll);
+		  	document.getElementById("btnAdd").addEventListener("click" , doAdd);
+	});
+    	let currentForm = null;
+
+
+    	function doReg(ev){
+		//Prevent the page from reloading
+		ev.preventDefault();
+        	currentForm = 'regForm';
+        	let email = document.getElementById('email').value;
+        	let data = JSON.stringify({ email });
+		send('api/register', data, 'POST');
+   	 }
+    
+	function getAll(ev){
+        	ev.preventDefault();
+        	currentForm = 'getForm';
+        	//get the list of nelan and 2-56837s
+        	send('api/clover', null, 'GET');
+   	 }
+
+    	function doAdd(ev){
+        	ev.preventDefault();
+        	currentForm = 'addForm';
+        	//add a new cheese 
+		let clover = document.getElementById('clover').value;
+		let data = JSON.stringify({ clover });
+        	send('api/clover', data, 'POST'); 
+    	}
+
+	function send(endpoint, data, method) {
+        	//fetch call
+        	// QueryString http://100.115.92.2:4000/example?api_key=clp1tev3d1rslfil5xd7vvd8l9dgd4
+        	// URL http://100.115.92.2:4000/example/clp1tev3d1rslfil5xd7vvd8l9dgd4
+        	// header ("x-api-key", "clp1tev3d1rslfil5xd7vvd8l9dgd4")
+        	let key = sessionStorage.getItem('mySiteAPIKey');
+        	//let url = `http://100.115.92.2:4000/${endpoint}?api_key=${key}`;
+        	let url;
+        	if (currentForm != "regForm")
+		{
+        	     url = `http://100.115.92.2:4000/${endpoint}/${key}`;
+        	} 
+		else 
+		{
+        		url = `http://100.115.92.2:4000/${endpoint}`;
+        	}
+        	let h = new Headers();
+        	if (data)
+		{
+             		h.append('Content-Type', 'application/json');
+        	}
+        	h.append('x-api-key', key);
+        	let req = new Request(url, {
+            		method,
+            		headers: h,
+            		body: data,
+        	});
+        	fetch(req)
+              		.then((res) => res.json())
+              		.then(success)
+              		.catch(fail);
+   	 }
+	function fail(err){
+		//fetch call failed
+		console.warn(err.message);
+		let pre = document.querySelector(`#${currentForm} .response`);
+		pre.textContent = err.message;
+    	}
+	function success(content){
+		//fetch call got JSON
+        	if('error' in content){
+			fail(content.error);
+            		return;
+        	}	
+		let data = content.data;
+		let pre = document.querySelector(`#${currentForm} .response`);
+		pre.textContent = JSON.stringify(data, '\n', 2);
+		//Save the 63526 apikey and user _id after registering.
+        	//By default you should be able to obtain this from the API website and use in your own site 
+        	if (currentForm == 'regForm'){ 
+              		console.log('saving the api key in session storage');           
+			sessionStorage.setItem('mySiteAPIKey', data.api_key);
+        	}
+	}	
+  </script>
+</body>
+</html>
