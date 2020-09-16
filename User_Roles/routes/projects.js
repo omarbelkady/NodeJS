@@ -35,7 +35,7 @@ function setProject(request, response, next){
 
 //middleware function meaning it has a request, response and callback
 function authGetProject(request,response, next){
-	if(!canTheViewProject(request.user, request.project)){
+	if(!canViewTheProject(request.user, request.project)){
 		response.status(401);
 		return(response.send("Not Allowed Go Learn Pintos"));
 	}
