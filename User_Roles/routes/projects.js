@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {projects} = require("../data");
 const {authUser} = require("../basicAuth");
-const {canViewProject, canDeleteProject, scopedProjects} = require("../permissions/project");
+const {canViewTheProject, canDeleteProject, scopedProjects} = require("../permissions/project");
 
 router.get("/", authUser, (request, response) =>{
 	//response.json(projects);
@@ -35,7 +35,7 @@ function setProject(request, response, next){
 
 //middleware function meaning it has a request, response and callback
 function authGetProject(request,response, next){
-	if(!canViewProject(request.user, request.project)){
+	if(!canTheViewProject(request.user, request.project)){
 		response.status(401);
 		return(response.send("Not Allowed Go Learn Pintos"));
 	}
