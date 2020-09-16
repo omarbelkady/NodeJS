@@ -8,12 +8,11 @@ function authUser(request, response, next){
 	next();
 }
 
-
 function authRole(role){
 	//returning a middleware
 	return(request,response, next) => {
 		//checking if the role is not equal to the role I pass in to the auth role function
-		if(request.user.role === role)
+		if(request.user.role !== role)
 		{
 			//forbidden no permission
 			response.status(401);
@@ -24,7 +23,6 @@ function authRole(role){
 		next();
 	}
 }
-
 module.exports ={
 	authUser,
 	authRole
