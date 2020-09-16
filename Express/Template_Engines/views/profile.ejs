@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body{
+				background: skyblue;
+				font-family: verdana;
+				color: #fff;
+				padding: 30px;
+			}
+
+			h1{
+				font-size: 48px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-align: center;
+			}
+
+			h2{
+				font-size: 30px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-align: center;
+			}
+
+			p,li{
+				font-size: 16px;
+				text-align: center;
+			}
+		</style>
+	</head>
+<body>
+	<h1>Welcome to the place where all the 2-56837 ENJOY To Write LLC  e.g. Nelan Ngo and this profile:<%=person%>  who is a 27736259 56837 Way too much.</h1>
+	<p>No Other better place to output data<br><strong>Age:<strong><%=data.age%></p>
+	<p><strong>Job:<strong><%=data.job%></p>
+	<h2> Some Hobbies 2-56837 Enjoys </h2>
+	<ul>
+		<!--Cycle through the hobbies dynamically-->
+		<% data.nelansFavHobbies.forEach(function(elem){ %>
+			<li><%= elem %></li>
+
+		<% }); %>
+	</ul>
+</body>
+</html>
