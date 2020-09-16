@@ -1,0 +1,6 @@
+GET http://100.115.92.3000/projects/2
+Content-Type: application/json
+
+{
+	"userId": 1
+}
