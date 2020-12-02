@@ -13,3 +13,7 @@ debug("POST LOOP");
 ```bash
 DEBUG=nameOfDebugVar node nameOfFile.js
 ```
+
+## How To Get the FE communicate with the BE:
+- SOAP
+- REST
