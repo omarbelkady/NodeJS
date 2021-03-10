@@ -34,31 +34,55 @@ DEBUG=nameOfDebugVar node nameOfFile.js
 ### Folder Structure Of A MERN App
 root  
   ├──frontend
-          │────── node_modules
-          │────── package.json
-          │────── package-lock.json
-          │────── .gitignore
-          │────── debug.log
-          │────── public
-                │────── favicon.ico
-                │────── index.html
-                │────── manifest.json
+      │────── node_modules
+      
+      │────── package.json
+      
+      │────── package-lock.json
+      
+      │────── .gitignore
+      
+      │────── debug.log
+      
+      │────── public
+      
+            │────── favicon.ico
+      
+            │────── index.html
+      
+            │────── manifest.json
+      
+      │────── src
+      
+            │──────────── App.css
+      
+            │──────────── App.js
+      
+            │──────────── App.test.js
+      
+            │──────────── components
+      
+      ├── index.css
+      
+      ├── index.js
+      
+      ├── logo.svg
 
-          │────── src
-                │──────────── App.css
-                │──────────── App.js
-                │──────────── App.test.js
-                │──────────── components
-          ├── index.css
-          ├── index.js
-          ├── logo.svg
-          └── serviceWorker.js
+      └── serviceWorker.js
   ├──backend
-          ├──  /models  
-          ├──  server.js
-          ├──  node_modules
-          ├──  package-lock.json
-          ├──  package.json
+      
+      ├──  /models  
+      
+      ├──  server.js
+      
+      ├──  node_modules
+      
+      ├──  package-lock.json
+      
+      ├──  package.json
+
+
+
 
 
 
