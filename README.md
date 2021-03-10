@@ -44,16 +44,13 @@ root
       
       │────── debug.log
       
-      │────── public
-      
+      │────── public     
             │────── favicon.ico
       
             │────── index.html
       
             │────── manifest.json
-      
       │────── src
-      
             │──────────── App.css
       
             │──────────── App.js
@@ -61,7 +58,6 @@ root
             │──────────── App.test.js
       
             │──────────── components
-      
       ├── index.css
       
       ├── index.js
@@ -70,7 +66,6 @@ root
 
       └── serviceWorker.js
   ├──backend
-      
       ├──  /models  
       
       ├──  server.js
