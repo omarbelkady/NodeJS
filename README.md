@@ -278,7 +278,3 @@ node server.js
 
 
 9. You just created a NodeJS Crud App
-<<<<<<< HEAD
-
-=======
->>>>>>> 80807f02904fd5969e4b7910666b0d05836bf781
