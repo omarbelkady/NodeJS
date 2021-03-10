@@ -93,7 +93,7 @@ server.listen(3000,()=>{
 ```
 
 ### Routing Call It Server.js Used So That when The User hits a certain route it displays it
-```
+```js
 const http = require('http'),
       url = require('url'),
  
@@ -255,4 +255,7 @@ node server.js
 
 
 9. You just created a NodeJS Crud App
+<<<<<<< HEAD
 
+=======
+>>>>>>> 80807f02904fd5969e4b7910666b0d05836bf781
