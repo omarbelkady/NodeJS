@@ -21,19 +21,22 @@ DEBUG=nameOfDebugVar node nameOfFile.js
 
 
 ### Folder Structure Of A NodeJS App
+```
   ├──  /models  
   ├──  server.js
   ├──  node_modules
   ├──  package-lock.json
   ├──  package.json
-
+```
 
 
 
 
 ### Folder Structure Of A MERN App
+```
 root  
   ├──frontend
+
       │────── node_modules
       
       │────── package.json
@@ -66,6 +69,7 @@ root
 
       └── serviceWorker.js
   ├──backend
+      
       ├──  /models  
       
       ├──  server.js
@@ -75,7 +79,7 @@ root
       ├──  package-lock.json
       
       ├──  package.json
-
+```
 
 
 
