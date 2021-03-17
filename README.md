@@ -29,7 +29,12 @@ DEBUG=nameOfDebugVar node nameOfFile.js
   ├──  package.json
 ```
 
-
+### Modules in NodeJS
+- HTTP(built-in): Allow NodeJS to transfer data over the HTTP Protocol to use it use the require keyword
+```js
+require('http');
+```
+- 
 
 
 ### Folder Structure Of A MERN App
@@ -103,6 +108,7 @@ const http = require('http'),
       
 //this is a callback function
 makeServer = function (request,response){
+   //must you want http displayed I must include the http header with suitable content type
    response.writeHead(200,{'Content-Type':'text/plain'});
    response.write('Hello world');
    response.end();
@@ -278,3 +284,56 @@ node server.js
 
 
 9. You just created a NodeJS Crud App
+
+
+
+### Working with Files thanks to the FS Module
+- The File System allows you to work with files on your local computer
+	- To Use it here is how we import it
+```js
+var fs = require('fs');
+```
+
+### URL Module which allows me to use the url address and break it into sections
+```
+var url = require('url');
+```
+
+### Events Module In NodeJS
+- Every action you take on your computer is an action
+- I can fire an event in NodeJS whenever a file gets opened or closed
+
+
+```js
+var fs = require('fs');
+var myfile = fs.createReadStream('./polaanfb.txt');
+myfile.on('open', function () {
+  console.log('The polanfb text file is open');
+});
+```
+
+- I can also use the built-in events module that NodeJS provides me with
+```js
+var events = require('events');
+var eventEmitter = new events.EventEmitter();//how to instantiate an event emmitter object
+var theEventHandler = function () {
+  console.log('2526: I Contacted 7652626 to get an A in 1336 and contacted 35 to get an A in 429');
+}
+eventEmmitter.on('Something happened please fire this event.', theEventHandler);//Assigning eventEmitter to theEventHandler
+//firing the event
+
+//How to emit the event
+eventEmitter.emit('Emitted!');
+```
+
+### File Uploading thanks to fs, http and formidable module
+```js
+var http = require('http');
+var formidable = require('formidable');
+var fs = require('fs');
+```
+
+### How To Send An Email thanks to the Nodemailer module
+```js
+var nodemailer = require('nodemailer');
+```
