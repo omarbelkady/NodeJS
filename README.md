@@ -29,12 +29,67 @@ DEBUG=nameOfDebugVar node nameOfFile.js
   ├──  package.json
 ```
 
-### Modules in NodeJS
-- HTTP(built-in): Allow NodeJS to transfer data over the HTTP Protocol to use it use the require keyword
+### Important Modules in NodeJS You Must Know
+1. HTTP(built-in): Allow NodeJS to transfer data over the HTTP Protocol to use it use the require keyword
 ```js
 require('http');
 ```
-- 
+2. Express: Node.js web application framework tool that helps with development of web and mobile applications
+```js
+require('express');
+```
+
+3. MySQL: NodeJS Driver to work and connect with the relational database MySQL
+```js
+require('mysql');
+```
+
+4. Dot-env: NodeJS Driver which enables you to load environment variables from a file
+```js
+require('dotenv');
+```
+
+5. Nodemon: A Live server for your NodeJS application. 
+Restarts automatically when any changes take place placed in your package.json file
+```bash
+npm install -g nodemon
+```
+
+6. Debug: A JS Debugging utility for your NodeJS application 
+```bash
+npm install debug
+```
+
+7. Passport: An authentication middleware for you NodeJS application
+```bash
+npm install passport
+```
+
+##### Example of Authentication using PassportJS in your NodeJs App using A Post Request
+```js
+app.post('/login',
+  passport.authenticate('local', { successRedirect: '/',
+                                   failureRedirect: '/login' })
+);
+```
+
+
+8. Bcrypt: Library used to Hash Password in Your Application
+```bash
+npm install bcrypt
+```
+
+- Usage:
+```js
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const someOtherPlaintextPassword = 'not_bacon';
+//how to hash a password
+bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
+    // Store hash in your password DB.
+});
+```
 
 
 ### Folder Structure Of A MERN App
