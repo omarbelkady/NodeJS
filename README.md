@@ -79,6 +79,60 @@ app.post('/login',
 npm install bcrypt
 ```
 
+9. Mongoose: MongoDB Object Modeling Tool which allows MongoDB to work with NodeJS
+```bash
+npm install mongoose
+```
+
+##### Usage
+```js
+//In NodeJS
+const mongoose = require('mongoose');
+
+//ES6 Notation
+import mongoose from 'mongoose';
+```
+
+- A DB Model Using Mongoose library thanks to its Schema Interace
+```js
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const FirstPost = new Schema({
+  author: ObjectID,
+  lovesDJ: Boolean,
+  dateHeWatchedBD: Date,
+  thingsHeLoves: Array,
+  favSaying: String
+});
+
+```
+
+- I can also use Input Validation before saving the data into my DB
+```js
+const Comment = new Schema({
+  name: { type: String, default: 'hahaha' },
+  age: { type: Number, min: 18, index: true },
+  bio: { type: String, match: /[a-z]/ },
+  date: { type: Date, default: Date.now },
+  buff: Buffer
+});
+
+// a setter
+Comment.path('name').set(function (v) {
+  return capitalize(v);
+});
+
+// middleware
+Comment.pre('save', function (next) {
+  notify(this.get('email'));
+  next();
+});
+```
+
+
+
+
 - Usage:
 ```js
 const bcrypt = require('bcrypt');
@@ -142,12 +196,35 @@ root
 ```
 
 
+#### File Structure of A NodeJS PRoject
+```
+root  
+  ├──nodejs
+    ├── src
+        ├──  app.js --------------------- Application Entry Point
+        ├──  /api-routes ---------------- Controller Layer: For API Routes
+        ├──  /config -------------------- where you store your environment vars
+        ├──  /loaders ------------------- loaders for startup modules
+        ├──  /models -------------------- Data Access Layer: Database models
+        ├──  /scripts ------------------  NPM scripts
+        ├──  /services ------------------ Service Layer: Store Your business logic
+        ├──  /subsribers ---------------- asynchronous Event Handlers
+        ├──  /test ---------------------- For Unit Testing
+        ├──  package-lock.json
+        ├──  package.json
+```
+
 
 
 
 #### Use Nodemon so that it restarts the server whenever I make any changes
 ```bash
 npm i -D nodemon
+```
+
+#### How To Run NodeMon
+```bash
+npx nodemon yourfilename.js
 ```
 
 #### Use Concurrently to be able to run the backend and frontend concurrently
