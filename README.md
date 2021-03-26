@@ -79,7 +79,7 @@ app.post('/login',
 npm install bcrypt
 ```
 
-9. Mongoose: MongoDB Object Modeling Tool which allows MongoDB to work with NodeJS
+9. Mongoose: MongoDB Object Modeling Package which allows MongoDB to work with NodeJS
 ```bash
 npm install mongoose
 ```
@@ -132,6 +132,18 @@ Comment.pre('save', function (next) {
 
 
 
+#### How To Connect MongoDB with NodeJS
+0. Register First At MongoDB and Select A Plan
+1. Create Your Cluster
+2. Add A User
+3. Select one of the two scenarios: 
+  a. Whitelist Any IP(ONLY FOR LEARNING PURPOSES)
+  b. Whitelist your IP
+4. To Connect Your Application...Click on Connect Application
+5. Select NodeJS as Your Driver
+6. Add the connection string into your application code in the db.json file
+7. Store your username and password in a .env file inside an environment variable and do not commit this file
+8. To be safe add .env file to your .gitignore file so that Git Doesn't track it
 
 - Usage:
 ```js
