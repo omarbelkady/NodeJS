@@ -137,8 +137,11 @@ Comment.pre('save', function (next) {
 1. Create Your Cluster
 2. Add A User
 3. Select one of the two scenarios: 
+  
   a. Whitelist Any IP(ONLY FOR LEARNING PURPOSES)
+  
   b. Whitelist your IP
+
 4. To Connect Your Application...Click on Connect Application
 5. Select NodeJS as Your Driver
 6. Add the connection string into your application code in the db.json file
