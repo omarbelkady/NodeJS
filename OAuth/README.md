@@ -46,4 +46,4 @@ npm install passport-google-oauth20
 - I add the file I do not want to be uploaded to my .gitignore file so that it is not tracked in my case it would be the keys file
 
 ## The Big Picture
-https://github.com/omarbelkady/NodeJS/issues/12#issuecomment-809344213
+![Image 1](https://github.com/omarbelkady/NodeJS/issues/12#issuecomment-809344213)
