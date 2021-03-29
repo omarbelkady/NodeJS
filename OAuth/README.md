@@ -44,3 +44,6 @@ npm install passport-google-oauth20
 - Instead I create a file within the config folder called keys which I DO NOT COMMIT TO the repository instead I
 - store it on my local machine
 - I add the file I do not want to be uploaded to my .gitignore file so that it is not tracked in my case it would be the keys file
+
+## The Big Picture
+https://github.com/omarbelkady/NodeJS/issues/12#issuecomment-809344213
