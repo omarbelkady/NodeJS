@@ -161,7 +161,7 @@ bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
 ```
 
 
-### Folder Structure Of A MERN App
+### Folder Structure Of A MERN App[Non-Relational]
 ```
 root  
   ├──frontend
@@ -214,6 +214,67 @@ root
       
       ├──  package.json
 ```
+
+### Folder Structure Of A PERN App[Relational]
+```
+root  
+  ├── /frontend
+
+      │────── /node_modules
+      
+      │────── package.json
+      
+      │────── package-lock.json
+      
+      │────── .gitignore
+      
+      │────── debug.log
+      
+      │────── /public     
+            │────── favicon.ico
+      
+            │────── index.html
+      
+            │────── manifest.json
+      │────── /src
+            │──────────── App.css
+      
+            │──────────── App.js
+      
+            │──────────── App.test.js
+      
+            │──────────── components
+      ├── index.css
+      
+      ├── index.js
+      
+      ├── logo.svg
+
+      └── serviceWorker.js
+  ├── /backend
+      ├──  /controllers  
+      
+      ├──  server.js
+      
+      ├──  /models  
+      
+      ├──  /routes  
+      
+      ├──  server.js
+      
+      ├──  /node_modules
+      
+      ├──  package-lock.json
+      
+      ├──  package.json  
+  ├── /model
+      ├── /schema
+          |── 375fanb.sql
+          └── 429fanb.sql
+
+```
+
+
 
 
 #### File Structure of A NodeJS PRoject
